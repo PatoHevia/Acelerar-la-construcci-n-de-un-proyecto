@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Potarfolio Patricio Hevia  by HTML5 UP</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <%= stylesheet_link_tag 'main', media: 'all' %>
+    <noscript><%= stylesheet_link_tag 'noscript', media: 'all' %></noscript>
+  </head>
+  <body class="is-preload-0 is-preload-1 is-preload-2">
+
+    <!-- Main -->
+    <div id="main">
+
+      <!-- Header -->
+      <header id="header">
+        <h1>Proyectos Patricio Hevia</h1>
+        <p>Esta galería muestra los proyectos WEB que he realizado a través de mi empresa. <a href="https://consultoraemp.cl/">CONSULTORA EMP</a></p>
+        
+        <!-- Enlace a la vista "Acerca de la Galería" -->
+        <p>
+          <a href="<%= url_for(controller: :home, action: :about) %>" class="button" target="_blank">Acerca de la Galería</a>
+        </p>
+    
+        <ul class="icons">
+          <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+          <li><a href="https://www.instagram.com/consultoraempmas/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+          <li><a href="https://github.com/PatoHevia" class="icon brands fa-github"><span class="label">Github</span></a></li>
+          <li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+        </ul>
+      </header>
+
+      <!-- Thumbnail Section -->
+      <section id="thumbnails">
+        <!-- 5 Images in total -->
+        <% (1..5).each do |i| %>
+          <article>
+            <a class="thumbnail" href="<%= asset_path "fulls/#{i.to_s.rjust(2, '0')}.jpg" %>" data-position="left center">
+              <%= image_tag "thumbs/#{i.to_s.rjust(2, '0')}.jpg", alt: "Imagen #{i}" %>
+            </a>
+            <h2>Proyectos web</h2>
+            <p>Derechos de autor © 2024 Consultora Emprende +</p>
+          </article>
+        <% end %>
+      </section>
+
+      <!-- Footer -->
+      <footer id="footer">
+        <ul class="copyright">
+          <li>&copy; Untitled.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a>.</li>
+        </ul>
+      </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <%= javascript_include_tag 'jquery.min' %>
+    <%= javascript_include_tag 'browser.min' %>
+    <%= javascript_include_tag 'breakpoints.min' %>
+    <%= javascript_include_tag 'main' %>
+
+  </body>
+</html>
